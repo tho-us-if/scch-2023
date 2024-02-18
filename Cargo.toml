@@ -7,6 +7,7 @@ edition = "2021"
 axum = { version = "0.7.3", features = ["multipart"] }
 axum-extra = { version = "0.9.2", features = ["cookie"] }
 base64 = "0.21.7"
+chrono = "0.4.34"
 fancy-regex = "0.13.0"
 image = "0.24.8"
 reqwest = "0.11.24"
@@ -17,3 +18,5 @@ shuttle-runtime = "0.39.0"
 tokio = "1.28.2"
 tower-http = { version = "0.5.1", features = ["fs", "trace"] }
 tracing = "0.1.40"
+ulid = "1.1.2"
+uuid = "1.7.0"
