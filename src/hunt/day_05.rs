@@ -1,6 +1,7 @@
 use axum::extract::Query;
 use axum::routing::post;
 use axum::{Json, Router};
+use tracing::info;
 
 pub fn route() -> Router {
     Router::new().route("/", post(slice))
@@ -18,6 +19,7 @@ async fn slice(
     Query(q): Query<Pagination>,
     Json(payload): Json<Vec<String>>,
 ) -> Json<Vec<serde_json::Value>> {
+    info!("Request Body {:?}, {:?}",q, payload );
     let limit = q.limit.unwrap_or(payload.len());
     let mut iter = payload.into_iter().skip(q.offset).take(limit);
 
